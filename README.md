@@ -8,7 +8,7 @@ In summary, the FHIRProxy ties in Azure Active Directory and Key Vault, allowing
  
 For the FHIR Genomics Proxy,  we created a service account for the Baylor College of Medicine (BCM) FHIRClient.  With proper authentication parameters, BCM Data can obtain an authorization token, to submit data.  With the token, BCM Data uploads lab reports (i.e., FHIR transaction bundles) to the FHIR Genomics Proxy.  The FHIR Genomics Proxy processes the bundles and stores them in the MS FHIR API.
 
-# Modifications to FHIRProxy and FHIRClient
+## Modifications to FHIRProxy and FHIRClient
 Currently, the MS FHIR API accepts batch, rather than transaction, bundles. Batch bundles require additional information in order to maintain associations between the bundled data.  This required changes to be made to both the FHIRProxy and FHIRClient to include association information into the submissions to the MS FHIR API. Once we made these changes, we were able to retrieve associated bundles from the MS FHIR API.
  
 ## Acknowledgements
